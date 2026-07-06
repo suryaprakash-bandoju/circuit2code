@@ -1,19 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // Change this to use the root path of your repository
-    const repo = "/circuit2code"; 
+    // 1. Get the base path of the current page
+    // If the path is '/circuit2code/python/index.html', base will be '/circuit2code/'
+    const pathArray = window.location.pathname.split('/');
+    const basePath = '/' + pathArray[1] + '/'; 
 
-    fetch(`${repo}/assets/components/sidebar.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('sidebar-container').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading sidebar:', error));
+    // 2. Load the components using the calculated base path
+    const loadComponent = (path, elementId) => {
+        fetch(basePath + path)
+            .then(response => {
+                if (!response.ok) throw new Error(`Could not load ${path}`);
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById(elementId).innerHTML = data;
+            })
+            .catch(error => console.error(error));
+    };
 
-    fetch(`${repo}/assets/components/navbar.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-container').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading navbar:', error));
+    loadComponent('assets/components/sidebar.html', 'sidebar-container');
+    loadComponent('assets/components/navbar.html', 'navbar-container');
 });
