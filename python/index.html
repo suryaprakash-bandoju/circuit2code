@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit2Code | Python Interview Hub</title>
+    <link rel="icon" href="/assets/images/logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0F19; }
+        ::-webkit-scrollbar-thumb { background: #1F2937; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #374151; }
+
+        .code-block {
+            background: #1E1E1E !important;
+            border: 1px solid #333 !important;
+            border-radius: 8px !important;
+            padding: 16px !important;
+            font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace !important;
+            font-size: 13px !important;
+            line-height: 1.6 !important;
+            overflow-x: auto !important;
+        }
+        .code-block .kw { color: #569CD6; }
+        .code-block .fn { color: #DCDCAA; }
+        .code-block .str { color: #CE9178; }
+        .code-block .cmt { color: #6A9955; }
+        .code-block .num { color: #B5CEA8; }
+        .code-block .op { color: #D4D4D4; }
+        .code-block .cls { color: #4EC9B0; }
+        .code-block .dec { color: #569CD6; }
+        .code-block .blt { color: #C586C0; }
+        .code-block .sel { color: #D7BA7D; }
+        .code-block .pun { color: #D4D4D4; }
+    </style>
+</head>
+<body class="bg-[#0B0F19] text-gray-200 font-sans h-screen flex overflow-hidden">
+
+    <!-- SIDEBAR -->
+    <aside class="w-64 bg-[#111827] border-r border-gray-800 flex flex-col justify-between h-full">
+        <div>
+        <div class="h-16 flex items-center px-6 border-b border-gray-800">
+            <div class="flex items-center space-x-2 text-xl font-bold text-white tracking-wide">
+                <img src="/assets/images/logo.png" alt="Logo" class="h-8 w-auto">
+                <span>Circuit2Code</span>
+            </div>
+        </div>
+            
+            <nav class="p-4 space-y-6 overflow-y-auto">
+                <div>
+                    <div class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2">Main Menu</div>
+                    <a href="../index.html" class="flex items-center space-x-3 px-3 py-2 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                        <span>📊</span> <span>Dashboard</span>
+                    </a>
+                </div>
+
+                <div>
+                    <div class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2">Learning Paths</div>
+                    <div class="space-y-1">
+                        <a href="index.html" class="flex items-center space-x-3 px-3 py-2 bg-blue-600/10 text-blue-400 rounded-lg font-medium transition">
+                            <span>🐍</span> <span>Python Interview</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+        <div class="p-4 border-t border-gray-800">
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 flex flex-col h-full relative">
+        
+        <!-- HEADER -->
+        <header class="h-16 border-b border-gray-800 bg-[#111827]/80 backdrop-blur flex items-center justify-between px-8 z-10">
+            <div class="text-lg font-semibold text-white flex items-center space-x-2">
+                <span class="text-gray-500">Workspace</span>
+                <span class="text-gray-600">/</span>
+                <span class="text-blue-400">Python Theory Hub</span>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <span class="text-sm text-gray-500 font-mono">54 ESSENTIAL QUESTIONS</span>
+            </div>
+        </header>
+
+        <div class="p-8 overflow-y-auto flex-1 w-full max-w-4xl mx-auto space-y-6 pb-20">
+            
+            <div class="p-6 bg-gradient-to-r from-blue-950/40 to-purple-950/30 border border-blue-900/40 rounded-xl mb-8">
+                <h2 class="text-xl font-bold text-white mb-2">Crack the Core Screenings</h2>
+                <p class="text-gray-400 text-sm max-w-2xl">Here are the essential theoretical Python questions compiled directly to clear technical interview bottlenecks.</p>
+            </div>
+
+            <!-- Question 01 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 01</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Is Python compiled or interpreted?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Python is both — like a teacher who first writes notes on the board (compiles) and then reads them aloud to the class (interprets).</p>
+                    <p><strong>Real-world example:</strong> Think of it like making Maggi noodles. First, you read the instructions (compile to bytecode), then you actually cook it step by step (interpret). Python first converts your code to bytecode (.pyc files), then the Python Virtual Machine reads and runs it line by line.</p>
+                </div>
+            </div>
+
+            <!-- Question 02 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 02</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">How to join (concatenate) two lists?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> You can stick two lists together using <code>+</code> (makes a new list) or <code>extend()</code> (adds to existing list).</p>
+                    <p><strong>Real-world example:</strong> Imagine two trains. Using <code>+</code> is like joining them to make a new longer train. Using <code>extend()</code> is like adding extra coaches to your existing train.</p>
+                    <div class="code-block">
+                        <span class="cmt"># Using + (new train)</span><br>
+                        a <span class="op">=</span> <span class="pun">[</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">]</span><br>
+                        b <span class="op">=</span> <span class="pun">[</span><span class="num">4</span><span class="pun">,</span> <span class="num">5</span><span class="pun">,</span> <span class="num">6</span><span class="pun">]</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>a <span class="op">+</span> b<span class="pun">)</span>  <span class="cmt"># [1, 2, 3, 4, 5, 6]</span><br><br>
+                        <span class="cmt"># Using extend() (add coaches)</span><br>
+                        a<span class="pun">.</span><span class="fn">extend</span><span class="pun">(</span>b<span class="pun">)</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>a<span class="pun">)</span>  <span class="cmt"># [1, 2, 3, 4, 5, 6]</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 03 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 03</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Difference between for and while loop?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <strong>for</strong> loop: Use when you know exactly how many times to repeat (like "do this 5 times").<br>
+                    <strong>while</strong> loop: Use when you don't know the count, but know when to stop (like "keep eating until you're full").</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>for:</strong> A school bell rings exactly 8 times for 8 periods.<br>
+                    <strong>while:</strong> You keep filling water until the bucket is full.</p>
+                    <div class="code-block">
+                        <span class="cmt"># for: I know I need 5 chocolates</span><br>
+                        <span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span><span class="pun">(</span><span class="num">5</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span>i<span class="pun">)</span><br><br>
+                        <span class="cmt"># while: Keep running until tired</span><br>
+                        tired <span class="op">=</span> <span class="kw">False</span><br>
+                        energy <span class="op">=</span> <span class="num">0</span><br>
+                        <span class="kw">while</span> <span class="kw">not</span> tired<span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;energy <span class="op">+=</span> <span class="num">1</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> energy <span class="op">>=</span> <span class="num">5</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tired <span class="op">=</span> <span class="kw">True</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 04 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 04</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">How to floor a number?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> <code>math.floor()</code> rounds DOWN to the nearest whole number (like the floor of a building — you can only go down).</p>
+                    <p><strong>Real-world example:</strong> If you have 3.7 pizzas, floor() says you have 3 complete pizzas. The 0.7 is just extra scraps.</p>
+                    <div class="code-block">
+                        <span class="kw">import</span> math<br>
+                        <span class="blt">print</span><span class="pun">(</span>math<span class="pun">.</span><span class="fn">floor</span><span class="pun">(</span><span class="num">3.7</span><span class="pun">))</span>  <span class="cmt"># 3</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>math<span class="pun">.</span><span class="fn">ceil</span><span class="pun">(</span><span class="num">3.2</span><span class="pun">))</span>   <span class="cmt"># 4 (ceiling goes UP)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 05 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 05</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Difference between / and //?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <code>/</code> = Normal division (gives exact answer with decimals)<br>
+                    <code>//</code> = Floor division (gives whole number only)</p>
+                    <p><strong>Real-world example:</strong> Divide 5 chocolates among 2 friends.<br>
+                    <code>/</code> gives 2.5 (exact share)<br>
+                    <code>//</code> gives 2 (whole chocolates each, remainder ignored)</p>
+                    <div class="code-block">
+                        <span class="blt">print</span><span class="pun">(</span><span class="num">5</span> <span class="op">/</span> <span class="num">2</span><span class="pun">)</span>   <span class="cmt"># 2.5</span><br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="num">5</span> <span class="op">//</span> <span class="num">2</span><span class="pun">)</span>  <span class="cmt"># 2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 06 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 06</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Is indentation required in Python?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> YES! In Python, indentation (spaces/tabs) is not just for looks — it shows what belongs together, like paragraphs in an essay.</p>
+                    <p><strong>Real-world example:</strong> In English, paragraphs group related sentences. In Python, indentation groups related code. Without it, Python gets confused about what belongs inside the <code>if</code> or <code>for</code>.</p>
+                    <div class="code-block">
+                        <span class="kw">if</span> <span class="kw">True</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">"This is inside if"</span><span class="pun">)</span>  <span class="cmt"># indented = belongs to if</span><br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="str">"This is outside"</span><span class="pun">)</span>        <span class="cmt"># not indented = separate</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 07 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 07</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Can we pass a function as an argument?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Yes! Functions are like tools. You can ask someone to use a specific tool for a job.</p>
+                    <p><strong>Real-world example:</strong> You tell your friend "use the addition method" to solve 3+5. Your friend doesn't need to know how addition works, just uses the tool you gave.</p>
+                    <div class="code-block">
+                        <span class="kw">def</span> <span class="fn">add</span><span class="pun">(</span>a<span class="pun">,</span> b<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> a <span class="op">+</span> b<br><br>
+                        <span class="kw">def</span> <span class="fn">calculate</span><span class="pun">(</span>func<span class="pun">,</span> x<span class="pun">,</span> y<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="fn">func</span><span class="pun">(</span>x<span class="pun">,</span> y<span class="pun">)</span><br><br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="fn">calculate</span><span class="pun">(</span>add<span class="pun">,</span> <span class="num">3</span><span class="pun">,</span> <span class="num">5</span><span class="pun">))</span>  <span class="cmt"># 8</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 08 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 08</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is a dynamically typed language?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> You don't need to tell Python "this is a number" or "this is text." Python figures it out automatically when you run the code.</p>
+                    <p><strong>Real-world example:</strong> Think of a magic box. You put in a book — it becomes a book box. You put in shoes — it becomes a shoe box. You don't need to label it beforehand.</p>
+                    <div class="code-block">
+                        x <span class="op">=</span> <span class="num">10</span>        <span class="cmt"># Python: "x is a number!"</span><br>
+                        x <span class="op">=</span> <span class="str">"Hello"</span>   <span class="cmt"># Python: "Now x is text!"</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 09 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 09</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is pass in Python?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> <code>pass</code> means "do nothing." It's like a placeholder or bookmark for later.</p>
+                    <p><strong>Real-world example:</strong> You reserve a seat in a movie theater but haven't bought the ticket yet. The seat is saved, but nothing happens there right now.</p>
+                    <div class="code-block">
+                        <span class="kw">def</span> <span class="fn">future_function</span><span class="pun">():</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">pass</span>  <span class="cmt"># I'll write code here later</span><br><br>
+                        <span class="cmt"># No error even though function is empty!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 10</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">How are arguments passed in Python?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Python uses "Pass by Object Reference." It's like sharing a notebook vs. giving a photocopy.</p>
+                    <p><strong>Real-world example:</strong><br>
+                    Mutable objects (lists, dictionaries) = Shared notebook. If your friend writes in it, you see the changes too.<br>
+                    Immutable objects (numbers, strings) = Photocopy. If your friend draws on it, your original stays the same.</p>
+                    <div class="code-block">
+                        <span class="kw">def</span> <span class="fn">change_list</span><span class="pun">(</span>my_list<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;my_list<span class="pun">.</span><span class="fn">append</span><span class="pun">(</span><span class="num">4</span><span class="pun">)</span>  <span class="cmt"># Changes original!</span><br><br>
+                        <span class="kw">def</span> <span class="fn">change_number</span><span class="pun">(</span>num<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;num <span class="op">=</span> num <span class="op">+</span> <span class="num">1</span>      <span class="cmt"># Doesn't change original!</span><br><br>
+                        a <span class="op">=</span> <span class="pun">[</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">]</span><br>
+                        <span class="fn">change_list</span><span class="pun">(</span>a<span class="pun">)</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>a<span class="pun">)</span>  <span class="cmt"># [1, 2, 3, 4] - changed!</span><br><br>
+                        n <span class="op">=</span> <span class="num">5</span><br>
+                        <span class="fn">change_number</span><span class="pun">(</span>n<span class="pun">)</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>n<span class="pun">)</span>  <span class="cmt"># 5 - still same!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 11</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is a lambda function?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> A one-line shortcut function with no name. Like a quick calculator.</p>
+                    <p><strong>Real-world example:</strong> Instead of writing a full recipe for "add sugar," you just say "add 2 spoons of sugar" directly.</p>
+                    <div class="code-block">
+                        <span class="cmt"># Normal function</span><br>
+                        <span class="kw">def</span> <span class="fn">square</span><span class="pun">(</span>x<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> x <span class="op">*</span> x<br><br>
+                        <span class="cmt"># Lambda shortcut</span><br>
+                        square <span class="op">=</span> <span class="kw">lambda</span> x<span class="pun">:</span> x <span class="op">*</span> x<br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="fn">square</span><span class="pun">(</span><span class="num">5</span><span class="pun">))</span>  <span class="cmt"># 25</span><br><br>
+                        <span class="cmt"># Even shorter use</span><br>
+                        upper <span class="op">=</span> <span class="kw">lambda</span> text<span class="pun">:</span> text<span class="pun">.</span><span class="fn">upper</span><span class="pun">()</span><br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="fn">upper</span><span class="pun">(</span><span class="str">"hello"</span><span class="pun">))</span>  <span class="cmt"># HELLO</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 12</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is List Comprehension?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> A shortcut to create lists in one line instead of writing a full loop.</p>
+                    <p><strong>Real-world example:</strong> Instead of writing "take each apple, paint it red, put in basket" as 3 steps, you just say "red apples in basket."</p>
+                    <div class="code-block">
+                        <span class="cmt"># Old way</span><br>
+                        squares <span class="op">=</span> <span class="pun">[]</span><br>
+                        <span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span><span class="pun">(</span><span class="num">5</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;squares<span class="pun">.</span><span class="fn">append</span><span class="pun">(</span>i <span class="op">**</span> <span class="num">2</span><span class="pun">)</span><br><br>
+                        <span class="cmt"># List comprehension (shortcut)</span><br>
+                        squares <span class="op">=</span> <span class="pun">[</span>i <span class="op">**</span> <span class="num">2</span> <span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span><span class="pun">(</span><span class="num">5</span><span class="pun">)]</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>squares<span class="pun">)</span>  <span class="cmt"># [0, 1, 4, 9, 16]</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 13</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What are *args and **kwargs?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> They let you accept any number of inputs.<br>
+                    <strong>*args</strong> = Any number of values (like a backpack)<br>
+                    <strong>**kwargs</strong> = Any number of named values (like labeled folders)</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>*args:</strong> A teacher saying "bring any number of notebooks" — 1, 5, or 10.<br>
+                    <strong>**kwargs:</strong> A form with any number of fields — name, age, address, etc.</p>
+                    <div class="code-block">
+                        <span class="cmt"># *args - any number of values</span><br>
+                        <span class="kw">def</span> <span class="fn">total</span><span class="pun">(</span><span class="op">*</span>numbers<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="fn">sum</span><span class="pun">(</span>numbers<span class="pun">)</span><br><br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="fn">total</span><span class="pun">(</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">,</span> <span class="num">4</span><span class="pun">))</span>  <span class="cmt"># 10</span><br><br>
+                        <span class="cmt"># **kwargs - any number of named values</span><br>
+                        <span class="kw">def</span> <span class="fn">info</span><span class="pun">(</span><span class="op">**</span>details<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">for</span> key<span class="pun">,</span> value <span class="kw">in</span> details<span class="pun">.</span><span class="fn">items</span><span class="pun">():</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">f"</span><span class="pun">{</span>key<span class="pun">}:</span> <span class="pun">{</span>value<span class="pun">}"</span><span class="pun">)</span><br><br>
+                        <span class="fn">info</span><span class="pun">(</span>name<span class="op">=</span><span class="str">"Rahul"</span><span class="pun">,</span> age<span class="op">=</span><span class="num">15</span><span class="pun">,</span> city<span class="op">=</span><span class="str">"Delhi"</span><span class="pun">)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 14</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">break, continue, and pass?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <strong>break:</strong> Stop everything and exit the loop (like a red light — stop completely).<br>
+                    <strong>continue:</strong> Skip this round, go to next (like a yellow light — skip, continue).<br>
+                    <strong>pass:</strong> Do nothing (like a green light that you ignore).</p>
+                    <p><strong>Real-world example:</strong> Playing musical chairs.<br>
+                    <strong>break:</strong> Stop the game entirely.<br>
+                    <strong>continue:</strong> Skip one round, keep playing.<br>
+                    <strong>pass:</strong> Just stand there, do nothing.</p>
+                    <div class="code-block">
+                        <span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span><span class="pun">(</span><span class="num">5</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> i <span class="op">==</span> <span class="num">2</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">continue</span>  <span class="cmt"># Skip 2</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> i <span class="op">==</span> <span class="num">4</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">break</span>     <span class="cmt"># Stop at 4</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span>i<span class="pun">)</span><br>
+                        <span class="cmt"># Output: 0, 1, 3</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 15 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 15</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Difference between Set and Dictionary?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <strong>Set:</strong> A bag of unique items, no duplicates, no order.<br>
+                    <strong>Dictionary:</strong> A locker with labeled keys, each key opens a specific value.</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>Set:</strong> A collection of unique stamps (no duplicates allowed).<br>
+                    <strong>Dictionary:</strong> A phone book — name (key) → phone number (value).</p>
+                    <div class="code-block">
+                        my_set <span class="op">=</span> <span class="pun">{</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">,</span> <span class="num">3</span><span class="pun">,</span> <span class="num">3</span><span class="pun">}</span>  <span class="cmt"># {1, 2, 3} - duplicates removed</span><br><br>
+                        my_dict <span class="op">=</span> <span class="pun">{</span><span class="str">"name"</span><span class="pun">:</span> <span class="str">"Rahul"</span><span class="pun">,</span> <span class="str">"age"</span><span class="pun">:</span> <span class="num">15</span><span class="pun">}</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>my_dict<span class="pun">[</span><span class="str">"name"</span><span class="pun">])</span>  <span class="cmt"># Rahul</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 16</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Built-in Data Types in Python?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> The basic types of "boxes" Python provides:<br>
+                    <strong>Numbers:</strong> int, float, complex (like 5, 5.5, 3+4j)<br>
+                    <strong>Sequence:</strong> str, list, tuple, range (ordered collections)<br>
+                    <strong>Mapping:</strong> dict (key-value pairs)<br>
+                    <strong>Set:</strong> set, frozenset (unique collections)<br>
+                    <strong>Boolean:</strong> True/False</p>
+                    <p><strong>Real-world example:</strong> Different containers for different things:<br>
+                    Number = Counting stones<br>
+                    String = Writing on paper<br>
+                    List = Shopping list<br>
+                    Tuple = Permanent record<br>
+                    Dictionary = Address book</p>
+                </div>
+            </div>
+
+            <!-- Question 17 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 17</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Mutable vs Immutable?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <strong>Mutable:</strong> Can be changed after creation (like a whiteboard).<br>
+                    <strong>Immutable:</strong> Cannot be changed after creation (like a permanent marker on stone).</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>Mutable (List):</strong> You can erase and rewrite on a whiteboard.<br>
+                    <strong>Immutable (String):</strong> Once you carve your name on stone, you can't change it — you need a new stone.</p>
+                    <div class="code-block">
+                        <span class="cmt"># Mutable - can change</span><br>
+                        my_list <span class="op">=</span> <span class="pun">[</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">]</span><br>
+                        my_list<span class="pun">[</span><span class="num">0</span><span class="pun">]</span> <span class="op">=</span> <span class="num">100</span>  <span class="cmt"># Allowed!</span><br><br>
+                        <span class="cmt"># Immutable - cannot change</span><br>
+                        my_string <span class="op">=</span> <span class="str">"hello"</span><br>
+                        <span class="cmt"># my_string[0] = "H"  # ERROR!</span><br>
+                        my_string <span class="op">=</span> <span class="str">"Hello"</span>  <span class="cmt"># This creates a NEW string</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 18 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 18</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is Variable Scope?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Where a variable can be seen and used.</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>Local:</strong> Your diary at home — only you can read it.<br>
+                    <strong>Global:</strong> School notice board — everyone can see it.<br>
+                    <strong>Built-in:</strong> The alphabet — available everywhere.</p>
+                    <div class="code-block">
+                        school_name <span class="op">=</span> <span class="str">"ABC School"</span>  <span class="cmt"># Global</span><br><br>
+                        <span class="kw">def</span> <span class="fn">classroom</span><span class="pun">():</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;student <span class="op">=</span> <span class="str">"Rahul"</span>  <span class="cmt"># Local</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span>school_name<span class="pun">)</span>  <span class="cmt"># Can access global</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span>student<span class="pun">)</span>      <span class="cmt"># Can access local</span><br><br>
+                        <span class="fn">classroom</span><span class="pun">()</span><br>
+                        <span class="cmt"># print(student)  # ERROR! Can't access outside function</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 19 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 19</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">How is Dictionary different from List?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <strong>List:</strong> Items in order, accessed by position number (0, 1, 2...).<br>
+                    <strong>Dictionary:</strong> Items with labels, accessed by name/key.</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>List:</strong> Seats in a theater — Seat 1, Seat 2, Seat 3.<br>
+                    <strong>Dictionary:</strong> Lockers in school — Locker "A", Locker "B", each with a name tag.</p>
+                    <div class="code-block">
+                        my_list <span class="op">=</span> <span class="pun">[</span><span class="num">10</span><span class="pun">,</span> <span class="num">20</span><span class="pun">,</span> <span class="num">30</span><span class="pun">]</span>          <span class="cmt"># Access: my_list[0]</span><br>
+                        my_dict <span class="op">=</span> <span class="pun">{</span><span class="str">"a"</span><span class="pun">:</span> <span class="num">10</span><span class="pun">,</span> <span class="str">"b"</span><span class="pun">:</span> <span class="num">20</span><span class="pun">}</span>    <span class="cmt"># Access: my_dict["a"]</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 20 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 20</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is a Docstring?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> A comment written inside <code>"""</code> that explains what a function/class does. Like an instruction manual.</p>
+                    <p><strong>Real-world example:</strong> The user manual that comes with a new phone. It tells you what the phone does without you needing to open it up.</p>
+                    <div class="code-block">
+                        <span class="kw">def</span> <span class="fn">add</span><span class="pun">(</span>a<span class="pun">,</span> b<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"""This function adds two numbers and returns the result."""</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> a <span class="op">+</span> b<br><br>
+                        <span class="cmt"># Read the manual</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>add<span class="pun">.</span>__doc__<span class="pun">)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 21 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 21</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Exception Handling in Python?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> A way to handle mistakes gracefully without crashing the program.</p>
+                    <p><strong>Real-world example:</strong> You're crossing a road. <strong>try</strong> = look both ways. <strong>except</strong> = if a car comes, step back. <strong>finally</strong> = whether you cross or not, you still reach your destination.</p>
+                    <div class="code-block">
+                        <span class="kw">try</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;result <span class="op">=</span> <span class="num">10</span> <span class="op">/</span> <span class="num">0</span>  <span class="cmt"># This will fail!</span><br>
+                        <span class="kw">except</span> <span class="blt">ZeroDivisionError</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">"Can't divide by zero!"</span><span class="pun">)</span><br>
+                        <span class="kw">finally</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">"This always runs."</span><span class="pun">)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 22 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 22</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Arrays vs Lists?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <strong>Array:</strong> Only stores same type of data (all numbers), faster for math.<br>
+                    <strong>List:</strong> Can store anything (numbers, text, objects), more flexible.</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>Array:</strong> A box only for cricket balls.<br>
+                    <strong>List:</strong> A mixed bag with balls, bats, gloves, water bottles.</p>
+                    <div class="code-block">
+                        <span class="kw">from</span> array <span class="kw">import</span> array<br>
+                        arr <span class="op">=</span> <span class="fn">array</span><span class="pun">(</span><span class="str">'i'</span><span class="pun">,</span> <span class="pun">[</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">])</span>  <span class="cmt"># Only integers</span><br><br>
+                        my_list <span class="op">=</span> <span class="pun">[</span><span class="num">1</span><span class="pun">,</span> <span class="str">"hello"</span><span class="pun">,</span> <span class="num">3.14</span><span class="pun">,</span> <span class="pun">[</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">]]</span>  <span class="cmt"># Anything allowed</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 23 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 23</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Modules and Packages?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <strong>Module:</strong> A single file with useful code (like one chapter of a book).<br>
+                    <strong>Package:</strong> A folder containing multiple related modules (like a full book).</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>Module:</strong> A recipe for biryani.<br>
+                    <strong>Package:</strong> A cookbook with recipes for biryani, curry, roti, dessert.</p>
+                    <div class="code-block">
+                        <span class="kw">import</span> math  <span class="cmt"># Module</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>math<span class="pun">.</span><span class="fn">sqrt</span><span class="pun">(</span><span class="num">16</span><span class="pun">))</span><br><br>
+                        <span class="cmt"># numpy is a package with many modules</span><br>
+                        <span class="kw">import</span> numpy <span class="kw">as</span> np
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 24 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 24</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">range() vs xrange()?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> In Python 3, <code>range()</code> works like old <code>xrange()</code> — it generates numbers one by one when needed, not all at once. <code>xrange</code> doesn't exist in Python 3.</p>
+                    <p><strong>Real-world example:</strong> Like a vending machine that gives one snack at a time instead of dumping everything on the floor at once. Saves memory!</p>
+                    <div class="code-block">
+                        <span class="cmt"># In Python 3, range() is memory-efficient</span><br>
+                        <span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span><span class="pun">(</span><span class="num">1000000</span><span class="pun">):</span>  <span class="cmt"># Doesn't create all numbers at once!</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">pass</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 25 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 25</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Dictionary Comprehension?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> A shortcut to create dictionaries in one line.</p>
+                    <p><strong>Real-world example:</strong> Instead of writing names and roll numbers one by one in a register, you use a machine that pairs them instantly.</p>
+                    <div class="code-block">
+                        names <span class="op">=</span> <span class="pun">[</span><span class="str">'A'</span><span class="pun">,</span> <span class="str">'B'</span><span class="pun">,</span> <span class="str">'C'</span><span class="pun">]</span><br>
+                        marks <span class="op">=</span> <span class="pun">[</span><span class="num">90</span><span class="pun">,</span> <span class="num">85</span><span class="pun">,</span> <span class="num">95</span><span class="pun">]</span><br><br>
+                        <span class="cmt"># Shortcut</span><br>
+                        result <span class="op">=</span> <span class="pun">{</span>name<span class="pun">:</span> mark <span class="kw">for</span> name<span class="pun">,</span> mark <span class="kw">in</span> <span class="fn">zip</span><span class="pun">(</span>names<span class="pun">,</span> marks<span class="pun">)}</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>result<span class="pun">)</span>  <span class="cmt"># {'A': 90, 'B': 85, 'C': 95}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 26 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 26</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Is Tuple Comprehension possible?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> No direct tuple comprehension. Using <code>()</code> creates a generator (lazy producer), not a tuple. Use <code>tuple()</code> to convert.</p>
+                    <p><strong>Real-world example:</strong> <code>(x for x in range(5))</code> is like a recipe — it tells you how to make items but doesn't make them until you ask. To get an actual box of items, use <code>tuple()</code>.</p>
+                    <div class="code-block">
+                        <span class="cmt"># This is a generator, not a tuple!</span><br>
+                        gen <span class="op">=</span> <span class="pun">(</span>x <span class="kw">for</span> x <span class="kw">in</span> <span class="fn">range</span><span class="pun">(</span><span class="num">5</span><span class="pun">))</span><br><br>
+                        <span class="cmt"># Convert to actual tuple</span><br>
+                        t <span class="op">=</span> <span class="fn">tuple</span><span class="pun">(</span>x <span class="kw">for</span> x <span class="kw">in</span> <span class="fn">range</span><span class="pun">(</span><span class="num">5</span><span class="pun">))</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>t<span class="pun">)</span>  <span class="cmt"># (0, 1, 2, 3, 4)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 27 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 27</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">List vs Tuple?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <strong>List:</strong> Changeable, uses <code>[]</code>, slower.<br>
+                    <strong>Tuple:</strong> Unchangeable, uses <code>()</code>, faster.</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>List:</strong> Your current to-do list — you can add, remove, edit tasks.<br>
+                    <strong>Tuple:</strong> Your birth certificate — permanent, can't be changed.</p>
+                    <div class="code-block">
+                        my_list <span class="op">=</span> <span class="pun">[</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">]</span><br>
+                        my_list<span class="pun">[</span><span class="num">0</span><span class="pun">]</span> <span class="op">=</span> <span class="num">100</span>  <span class="cmt"># Allowed</span><br><br>
+                        my_tuple <span class="op">=</span> <span class="pun">(</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">)</span><br>
+                        <span class="cmt"># my_tuple[0] = 100  # ERROR! Not allowed</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 28 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 28</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Shallow Copy vs Deep Copy?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <strong>Shallow Copy:</strong> Copies the outer box, but inner items are still shared.<br>
+                    <strong>Deep Copy:</strong> Copies everything — outer box and all inner items completely new.</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>Shallow:</strong> Photocopying a family photo album cover. The cover is new, but photos inside are still the originals.<br>
+                    <strong>Deep:</strong> Photocopying every single page and photo — completely independent album.</p>
+                    <div class="code-block">
+                        <span class="kw">import</span> copy<br><br>
+                        original <span class="op">=</span> <span class="pun">[[</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">],</span> <span class="pun">[</span><span class="num">3</span><span class="pun">,</span> <span class="num">4</span><span class="pun">]]</span><br><br>
+                        <span class="cmt"># Shallow copy</span><br>
+                        shallow <span class="op">=</span> copy<span class="pun">.</span><span class="fn">copy</span><span class="pun">(</span>original<span class="pun">)</span><br>
+                        shallow<span class="pun">[</span><span class="num">0</span><span class="pun">][</span><span class="num">0</span><span class="pun">]</span> <span class="op">=</span> <span class="num">100</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>original<span class="pun">)</span>  <span class="cmt"># [[100, 2], [3, 4]] - original changed!</span><br><br>
+                        <span class="cmt"># Deep copy</span><br>
+                        deep <span class="op">=</span> copy<span class="pun">.</span><span class="fn">deepcopy</span><span class="pun">(</span>original<span class="pun">)</span><br>
+                        deep<span class="pun">[</span><span class="num">0</span><span class="pun">][</span><span class="num">0</span><span class="pun">]</span> <span class="op">=</span> <span class="num">999</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>original<span class="pun">)</span>  <span class="cmt"># [[100, 2], [3, 4]] - original unchanged!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 29 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 29</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Which sorting does Python use?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Timsort — a smart mix of Merge Sort and Insertion Sort. Fast and stable.</p>
+                    <p><strong>Real-world example:</strong> Like sorting a deck of cards where some parts are already sorted. Instead of mixing everything up, you use the already-sorted parts to speed up.</p>
+                </div>
+            </div>
+
+            <!-- Question 30 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 30</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What are Decorators?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> A function that wraps another function to add extra features without changing the original.</p>
+                    <p><strong>Real-world example:</strong> You have a plain gift. A decorator is like gift wrapping — it adds ribbons and paper (extra features) but the gift inside remains the same.</p>
+                    <div class="code-block">
+                        <span class="kw">def</span> <span class="fn">my_decorator</span><span class="pun">(</span>func<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">wrapper</span><span class="pun">():</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">"Before function"</span><span class="pun">)</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">func</span><span class="pun">()</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">"After function"</span><span class="pun">)</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> wrapper<br><br>
+                        <span class="dec">@my_decorator</span><br>
+                        <span class="kw">def</span> <span class="fn">say_hello</span><span class="pun">():</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">"Hello!"</span><span class="pun">)</span><br><br>
+                        <span class="fn">say_hello</span><span class="pun">()</span><br>
+                        <span class="cmt"># Output: Before function / Hello! / After function</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 31 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 31</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">How to debug a Python program?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Finding and fixing errors.</p>
+                    <p><strong>Real-world example:</strong> Like being a detective solving a mystery.<br>
+                    <strong>pdb:</strong> Stop the movie at a scene and check what's happening.<br>
+                    <strong>logging:</strong> Write a diary of what happened.</p>
+                    <div class="code-block">
+                        <span class="kw">import</span> pdb<br><br>
+                        x <span class="op">=</span> <span class="num">5</span><br>
+                        pdb<span class="pun">.</span><span class="fn">set_trace</span><span class="pun">()</span>  <span class="cmt"># Pause here! Check variables.</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>x<span class="pun">)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 32 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 32</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What are Iterators?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Objects that give you one item at a time when you ask.</p>
+                    <p><strong>Real-world example:</strong> A TV remote's "Next Channel" button. Press it once → get one channel. Press again → next channel. You don't get all channels at once.</p>
+                    <div class="code-block">
+                        my_list <span class="op">=</span> <span class="pun">[</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">]</span><br>
+                        it <span class="op">=</span> <span class="fn">iter</span><span class="pun">(</span>my_list<span class="pun">)</span><br><br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="fn">next</span><span class="pun">(</span>it<span class="pun">))</span>  <span class="cmt"># 1</span><br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="fn">next</span><span class="pun">(</span>it<span class="pun">))</span>  <span class="cmt"># 2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 33 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 33</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What are Generators?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Functions that produce values one by one using <code>yield</code>, saving memory.</p>
+                    <p><strong>Real-world example:</strong> A vending machine that gives one snack at a time vs. a truck dumping 1000 snacks on your lawn. Generators are the vending machine.</p>
+                    <div class="code-block">
+                        <span class="kw">def</span> <span class="fn">count_to_5</span><span class="pun">():</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">yield</span> <span class="num">1</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">yield</span> <span class="num">2</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">yield</span> <span class="num">3</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">yield</span> <span class="num">4</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">yield</span> <span class="num">5</span><br><br>
+                        <span class="kw">for</span> num <span class="kw">in</span> <span class="fn">count_to_5</span><span class="pun">():</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span>num<span class="pun">)</span>  <span class="cmt"># 1, 2, 3, 4, 5 (one at a time!)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 34 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 34</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Does Python support Multiple Inheritance?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Yes! A child can inherit from multiple parents.</p>
+                    <p><strong>Real-world example:</strong> You inherit traits from both your mother (eyes) and father (height). Similarly, a class can inherit from multiple classes.</p>
+                    <div class="code-block">
+                        <span class="kw">class</span> <span class="cls">Father</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">skills</span><span class="pun">(</span><span class="sel">self</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">"Good at math"</span><span class="pun">)</span><br><br>
+                        <span class="kw">class</span> <span class="cls">Mother</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">talents</span><span class="pun">(</span><span class="sel">self</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">"Good at art"</span><span class="pun">)</span><br><br>
+                        <span class="kw">class</span> <span class="cls">Child</span><span class="pun">(</span><span class="cls">Father</span><span class="pun">,</span> <span class="cls">Mother</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">pass</span><br><br>
+                        c <span class="op">=</span> <span class="fn">Child</span><span class="pun">()</span><br>
+                        c<span class="pun">.</span><span class="fn">skills</span><span class="pun">()</span>   <span class="cmt"># From Father</span><br>
+                        c<span class="pun">.</span><span class="fn">talents</span><span class="pun">()</span>  <span class="cmt"># From Mother</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 35 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 35</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is Polymorphism?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Same name, different behavior. One action, different results based on who does it.</p>
+                    <p><strong>Real-world example:</strong> The word "Play" — you play cricket, play guitar, play video games. Same word, different actions!</p>
+                    <div class="code-block">
+                        <span class="kw">class</span> <span class="cls">Dog</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">sound</span><span class="pun">(</span><span class="sel">self</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">"Bark"</span><span class="pun">)</span><br><br>
+                        <span class="kw">class</span> <span class="cls">Cat</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">sound</span><span class="pun">(</span><span class="sel">self</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">"Meow"</span><span class="pun">)</span><br><br>
+                        <span class="kw">for</span> animal <span class="kw">in</span> <span class="pun">[</span><span class="fn">Dog</span><span class="pun">(),</span> <span class="fn">Cat</span><span class="pun">()]:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;animal<span class="pun">.</span><span class="fn">sound</span><span class="pun">()</span>  <span class="cmt"># Same method name, different output!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 36 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 36</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is Encapsulation?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Hiding internal details and only exposing what's needed.</p>
+                    <p><strong>Real-world example:</strong> A TV remote. You press "Volume Up" — you don't need to know how the circuits inside work. The internal stuff is hidden (private), only buttons are exposed (public).</p>
+                    <div class="code-block">
+                        <span class="kw">class</span> <span class="cls">BankAccount</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">__init__</span><span class="pun">(</span><span class="sel">self</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sel">self</span><span class="pun">.</span>__balance <span class="op">=</span> <span class="num">0</span>  <span class="cmt"># Private (hidden)</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">deposit</span><span class="pun">(</span><span class="sel">self</span><span class="pun">,</span> amount<span class="pun">):</span>  <span class="cmt"># Public method</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sel">self</span><span class="pun">.</span>__balance <span class="op">+=</span> amount<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">get_balance</span><span class="pun">(</span><span class="sel">self</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="sel">self</span><span class="pun">.</span>__balance<br><br>
+                        account <span class="op">=</span> <span class="fn">BankAccount</span><span class="pun">()</span><br>
+                        account<span class="pun">.</span><span class="fn">deposit</span><span class="pun">(</span><span class="num">100</span><span class="pun">)</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>account<span class="pun">.</span><span class="fn">get_balance</span><span class="pun">())</span>  <span class="cmt"># 100</span><br>
+                        <span class="cmt"># print(account.__balance)  # ERROR! Can't access directly</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 37 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 37</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is Data Abstraction?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Showing only essential features, hiding complex details.</p>
+                    <p><strong>Real-world example:</strong> Driving a car. You use steering, brake, accelerator. You don't need to understand the engine, transmission, or fuel injection system.</p>
+                    <div class="code-block">
+                        <span class="kw">from</span> abc <span class="kw">import</span> ABC<span class="pun">,</span> abstractmethod<br><br>
+                        <span class="kw">class</span> <span class="cls">Shape</span><span class="pun">(</span>ABC<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="dec">@abstractmethod</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">area</span><span class="pun">(</span><span class="sel">self</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">pass</span>  <span class="cmt"># Just a blueprint, no details</span><br><br>
+                        <span class="kw">class</span> <span class="cls">Circle</span><span class="pun">(</span><span class="cls">Shape</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">area</span><span class="pun">(</span><span class="sel">self</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="num">3.14</span> <span class="op">*</span> <span class="num">5</span> <span class="op">*</span> <span class="num">5</span>  <span class="cmt"># Actual implementation</span><br><br>
+                        c <span class="op">=</span> <span class="fn">Circle</span><span class="pun">()</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>c<span class="pun">.</span><span class="fn">area</span><span class="pun">())</span>  <span class="cmt"># 78.5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 38 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 38</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">How is memory managed in Python?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Python automatically handles memory using:<br>
+                    <strong>Private heap:</strong> A special storage area for all objects.<br>
+                    <strong>Garbage collector:</strong> Automatically cleans up unused objects (like a robot vacuum).</p>
+                    <p><strong>Real-world example:</strong> It's like a smart room that automatically cleans itself when you leave. You don't need to mop — Python does it for you!</p>
+                </div>
+            </div>
+
+            <!-- Question 39 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 39</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">How to delete a file?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Use <code>os.remove()</code> for permanent delete, or <code>send2trash</code> for recycle bin.</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>os.remove():</strong> Throwing paper directly into fire (gone forever).<br>
+                    <strong>send2trash:</strong> Putting paper in dustbin (can recover if needed).</p>
+                    <div class="code-block">
+                        <span class="kw">import</span> os<br>
+                        os<span class="pun">.</span><span class="fn">remove</span><span class="pun">(</span><span class="str">"old_file.txt"</span><span class="pun">)</span>  <span class="cmt"># Permanent delete!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 40 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 40</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is Slicing?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Cutting out a portion of a list/string/tuple.</p>
+                    <p><strong>Real-world example:</strong> Cutting a slice of cake from a whole cake. You specify where to start, where to end, and how big the pieces should be.</p>
+                    <div class="code-block">
+                        text <span class="op">=</span> <span class="str">"HelloWorld"</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>text<span class="pun">[</span><span class="num">0</span><span class="pun">:</span><span class="num">5</span><span class="pun">])</span>    <span class="cmt"># Hello</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>text<span class="pun">[::</span><span class="num">2</span><span class="pun">])</span>    <span class="cmt"># Hlool (every 2nd letter)</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>text<span class="pun">[::</span><span class="op">-</span><span class="num">1</span><span class="pun">])</span>   <span class="cmt"># dlroWolleH (reverse!)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 41 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 41</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is a Namespace?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> A container where names (variables, functions) live. It prevents confusion between same names in different places.</p>
+                    <p><strong>Real-world example:</strong> Two students named "Rahul" — one in Class 10A, one in 10B. The classroom is the namespace. 10A.Rahul and 10B.Rahul are different people!</p>
+                    <div class="code-block">
+                        <span class="cmt"># Built-in namespace</span><br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="fn">len</span><span class="pun">(</span><span class="str">"hello"</span><span class="pun">))</span>  <span class="cmt"># len is built-in</span><br><br>
+                        <span class="cmt"># Global namespace</span><br>
+                        name <span class="op">=</span> <span class="str">"Global"</span><br><br>
+                        <span class="kw">def</span> <span class="fn">test</span><span class="pun">():</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;name <span class="op">=</span> <span class="str">"Local"</span>  <span class="cmt"># Local namespace</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span>name<span class="pun">)</span><br><br>
+                        <span class="fn">test</span><span class="pun">()</span>       <span class="cmt"># Local</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>name<span class="pun">)</span>  <span class="cmt"># Global</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 42 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 42</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is PIP?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> PIP = Pip Installs Packages. It's Python's App Store for downloading libraries.</p>
+                    <p><strong>Real-world example:</strong> Like Google Play Store or Apple App Store. You want a calculator app? Download it. You want numpy for math? <code>pip install numpy</code>.</p>
+                    <div class="code-block">
+                        pip install numpy<br>
+                        pip install pandas
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 43 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 43</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is zip() function?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Joins two or more lists together pair by pair, like a zipper.</p>
+                    <p><strong>Real-world example:</strong> A zipper on a jacket joins left and right sides tooth by tooth. <code>zip()</code> joins list items index by index.</p>
+                    <div class="code-block">
+                        names <span class="op">=</span> <span class="pun">[</span><span class="str">"A"</span><span class="pun">,</span> <span class="str">"B"</span><span class="pun">,</span> <span class="str">"C"</span><span class="pun">]</span><br>
+                        marks <span class="op">=</span> <span class="pun">[</span><span class="num">90</span><span class="pun">,</span> <span class="num">85</span><span class="pun">,</span> <span class="num">95</span><span class="pun">]</span><br><br>
+                        paired <span class="op">=</span> <span class="fn">list</span><span class="pun">(</span><span class="fn">zip</span><span class="pun">(</span>names<span class="pun">,</span> marks<span class="pun">))</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>paired<span class="pun">)</span>  <span class="cmt"># [('A', 90), ('B', 85), ('C', 95)]</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 44 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 44</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Pickling and Unpickling?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <strong>Pickling:</strong> Converting Python objects to bytes (for saving/sharing).<br>
+                    <strong>Unpickling:</strong> Converting bytes back to Python objects.</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>Pickling:</strong> Packing clothes into a suitcase for travel.<br>
+                    <strong>Unpickling:</strong> Unpacking clothes at your destination.</p>
+                    <div class="code-block">
+                        <span class="kw">import</span> pickle<br><br>
+                        data <span class="op">=</span> <span class="pun">{</span><span class="str">"name"</span><span class="pun">:</span> <span class="str">"Rahul"</span><span class="pun">,</span> <span class="str">"age"</span><span class="pun">:</span> <span class="num">15</span><span class="pun">}</span><br><br>
+                        <span class="cmt"># Pickling (save)</span><br>
+                        <span class="kw">with</span> <span class="fn">open</span><span class="pun">(</span><span class="str">"data.pkl"</span><span class="pun">,</span> <span class="str">"wb"</span><span class="pun">)</span> <span class="kw">as</span> file<span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;pickle<span class="pun">.</span><span class="fn">dump</span><span class="pun">(</span>data<span class="pun">,</span> file<span class="pun">)</span><br><br>
+                        <span class="cmt"># Unpickling (load)</span><br>
+                        <span class="kw">with</span> <span class="fn">open</span><span class="pun">(</span><span class="str">"data.pkl"</span><span class="pun">,</span> <span class="str">"rb"</span><span class="pun">)</span> <span class="kw">as</span> file<span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;loaded <span class="op">=</span> pickle<span class="pun">.</span><span class="fn">load</span><span class="pun">(</span>file<span class="pun">)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 45 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 45</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">@classmethod, @staticmethod, and Instance Methods?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <strong>Instance method:</strong> Needs an object (uses <code>self</code>). Like your personal diary.<br>
+                    <strong>Class method:</strong> Works for the whole class (uses <code>cls</code>). Like a school notice.<br>
+                    <strong>Static method:</strong> Doesn't need object or class. Like a general helper tool.</p>
+                    <p><strong>Real-world example:</strong><br>
+                    <strong>Instance:</strong> "What's MY roll number?" (personal)<br>
+                    <strong>Class method:</strong> "What's the school name?" (same for all)<br>
+                    <strong>Static method:</strong> "Is 18 an adult age?" (general fact)</p>
+                    <div class="code-block">
+                        <span class="kw">class</span> <span class="cls">Student</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;school <span class="op">=</span> <span class="str">"ABC School"</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">__init__</span><span class="pun">(</span><span class="sel">self</span><span class="pun">,</span> name<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sel">self</span><span class="pun">.</span>name <span class="op">=</span> name  <span class="cmt"># Instance</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">show_name</span><span class="pun">(</span><span class="sel">self</span><span class="pun">):</span>  <span class="cmt"># Instance method</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">f"Name: {self.name}"</span><span class="pun">)</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="dec">@classmethod</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">show_school</span><span class="pun">(</span>cls<span class="pun">):</span>  <span class="cmt"># Class method</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">f"School: {cls.school}"</span><span class="pun">)</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="dec">@staticmethod</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">is_adult</span><span class="pun">(</span>age<span class="pun">):</span>  <span class="cmt"># Static method</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> age <span class="op">>=</span> <span class="num">18</span><br><br>
+                        s <span class="op">=</span> <span class="fn">Student</span><span class="pun">(</span><span class="str">"Rahul"</span><span class="pun">)</span><br>
+                        s<span class="pun">.</span><span class="fn">show_name</span><span class="pun">()</span>           <span class="cmt"># Instance</span><br>
+                        <span class="cls">Student</span><span class="pun">.</span><span class="fn">show_school</span><span class="pun">()</span>   <span class="cmt"># Class method</span><br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="cls">Student</span><span class="pun">.</span><span class="fn">is_adult</span><span class="pun">(</span><span class="num">20</span><span class="pun">))</span>  <span class="cmt"># Static</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 46 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 46</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is __init__() and self?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong><br>
+                    <strong>__init__():</strong> The "setup" function that runs automatically when you create an object.<br>
+                    <strong>self:</strong> Refers to the object itself (like saying "me" or "myself").</p>
+                    <p><strong>Real-world example:</strong> When a new student joins school, they fill out a form with name, class, roll number. <code>__init__</code> is that form-filling process. <code>self</code> is the student saying "MY name is...".</p>
+                    <div class="code-block">
+                        <span class="kw">class</span> <span class="cls">Student</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">__init__</span><span class="pun">(</span><span class="sel">self</span><span class="pun">,</span> name<span class="pun">,</span> age<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sel">self</span><span class="pun">.</span>name <span class="op">=</span> name  <span class="cmt"># "My name is..."</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sel">self</span><span class="pun">.</span>age <span class="op">=</span> age    <span class="cmt"># "My age is..."</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">introduce</span><span class="pun">(</span><span class="sel">self</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">f"Hi, I'm {self.name}, {self.age} years old."</span><span class="pun">)</span><br><br>
+                        rahul <span class="op">=</span> <span class="fn">Student</span><span class="pun">(</span><span class="str">"Rahul"</span><span class="pun">,</span> <span class="num">15</span><span class="pun">)</span><br>
+                        rahul<span class="pun">.</span><span class="fn">introduce</span><span class="pun">()</span>  <span class="cmt"># Hi, I'm Rahul, 15 years old.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 47 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 47</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Display current time?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Use <code>datetime</code> module.</p>
+                    <div class="code-block">
+                        <span class="kw">from</span> datetime <span class="kw">import</span> datetime<br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="str">"Current time:"</span><span class="pun">,</span> datetime<span class="pun">.</span><span class="fn">now</span><span class="pun">())</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 48 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 48</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Access Specifiers in Python?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Controls who can access what.<br>
+                    <strong>Public:</strong> No underscore. Anyone can access. Like a public park.<br>
+                    <strong>Protected:</strong> Single underscore <code>_</code>. Like school property — students can use, but outsiders shouldn't.<br>
+                    <strong>Private:</strong> Double underscore <code>__</code>. Like your personal diary — name is hidden.</p>
+                    <div class="code-block">
+                        <span class="kw">class</span> <span class="cls">Student</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">__init__</span><span class="pun">(</span><span class="sel">self</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sel">self</span><span class="pun">.</span>name <span class="op">=</span> <span class="str">"Rahul"</span>      <span class="cmt"># Public</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sel">self</span><span class="pun">.</span>_grade <span class="op">=</span> <span class="str">"A"</span>        <span class="cmt"># Protected</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sel">self</span><span class="pun">.</span>__password <span class="op">=</span> <span class="str">"1234"</span> <span class="cmt"># Private</span><br><br>
+                        s <span class="op">=</span> <span class="fn">Student</span><span class="pun">()</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>s<span class="pun">.</span>name<span class="pun">)</span>        <span class="cmt"># OK</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>s<span class="pun">.</span>_grade<span class="pun">)</span>      <span class="cmt"># Possible but discouraged</span><br>
+                        <span class="blt">print</span><span class="pun">(</span>s<span class="pun">.</span>_Student__password<span class="pun">)</span>  <span class="cmt"># Name mangling to access private</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 49 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 49</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What are Unit Tests?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Testing small individual parts of code to make sure each works correctly.</p>
+                    <p><strong>Real-world example:</strong> Before a final exam, you test yourself on each chapter. If every chapter is perfect, the whole exam will be good. You don't wait until the final to check!</p>
+                    <div class="code-block">
+                        <span class="kw">import</span> unittest<br><br>
+                        <span class="kw">def</span> <span class="fn">add</span><span class="pun">(</span>a<span class="pun">,</span> b<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> a <span class="op">+</span> b<br><br>
+                        <span class="kw">class</span> <span class="cls">TestMath</span><span class="pun">(</span>unittest<span class="pun">.</span>TestCase<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">test_add</span><span class="pun">(</span><span class="sel">self</span><span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sel">self</span><span class="pun">.</span><span class="fn">assertEqual</span><span class="pun">(</span><span class="fn">add</span><span class="pun">(</span><span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">),</span> <span class="num">5</span><span class="pun">)</span><br><br>
+                        unittest<span class="pun">.</span><span class="fn">main</span><span class="pun">()</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 50 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 50</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">What is GIL (Global Interpreter Lock)?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> A rule that allows only one thread to run Python code at a time.</p>
+                    <p><strong>Real-world example:</strong> A single-lane bridge. Only one car can cross at a time. Even if 10 cars arrive, they must wait their turn. This keeps things safe but can slow down heavy calculations.</p>
+                </div>
+            </div>
+
+            <!-- Question 51 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 51</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Function Annotations?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Adding labels to tell what type of data a function expects and returns.</p>
+                    <p><strong>Real-world example:</strong> Like labeling boxes when moving house — "Fragile: Glass", "Heavy: Books". It doesn't force anything, but helps everyone understand.</p>
+                    <div class="code-block">
+                        <span class="kw">def</span> <span class="fn">greet</span><span class="pun">(</span>name<span class="pun">:</span> <span class="blt">str</span><span class="pun">,</span> age<span class="pun">:</span> <span class="blt">int</span><span class="pun">)</span> <span class="op">-></span> <span class="blt">str</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">f"Hello {name}, you are {age}"</span><br><br>
+                        <span class="cmt"># These are just hints! Python doesn't enforce them.</span><br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="fn">greet</span><span class="pun">(</span><span class="str">"Rahul"</span><span class="pun">,</span> <span class="num">15</span><span class="pun">))</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 52 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 52</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Exception Groups (Python 3.11+)?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Handling multiple errors at once instead of one by one.</p>
+                    <p><strong>Real-world example:</strong> A teacher checking homework. Instead of stopping at the first mistake, they collect ALL mistakes and tell you everything at once.</p>
+                    <div class="code-block">
+                        <span class="kw">try</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">raise</span> <span class="fn">ExceptionGroup</span><span class="pun">(</span><span class="str">"group"</span><span class="pun">,</span> <span class="pun">[</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">TypeError</span><span class="pun">(</span><span class="str">"Wrong type"</span><span class="pun">),</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">ValueError</span><span class="pun">(</span><span class="str">"Wrong value"</span><span class="pun">)</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="pun">])</span><br>
+                        <span class="kw">except</span><span class="op">*</span> <span class="blt">TypeError</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">"Fixed type error"</span><span class="pun">)</span><br>
+                        <span class="kw">except</span><span class="op">*</span> <span class="blt">ValueError</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span><span class="str">"Fixed value error"</span><span class="pun">)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 53 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 53</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Python Switch Statement?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Python doesn't have traditional switch, but Python 3.10+ has match-case.</p>
+                    <p><strong>Real-world example:</strong> Like a key matching a lock. You try different keys until one fits.</p>
+                    <div class="code-block">
+                        <span class="kw">def</span> <span class="fn">check_status</span><span class="pun">(</span>status<span class="pun">):</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">match</span> status<span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">case</span> <span class="num">200</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">"OK"</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">case</span> <span class="num">404</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">"Not Found"</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">case</span> _<span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">"Unknown"</span><br><br>
+                        <span class="blt">print</span><span class="pun">(</span><span class="fn">check_status</span><span class="pun">(</span><span class="num">200</span><span class="pun">))</span>  <span class="cmt"># OK</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Questrdion 54 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                <div class="flex items-start justify-between">
+                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 54</span>
+                </div>
+                <h3 class="text-lg font-medium text-white mt-3">Walrus Operator (:=)?</h3>
+                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                    <p><strong>Simple Answer:</strong> Assign a value while using it in an expression. Do two things at once!</p>
+                    <p><strong>Real-world example:</strong> You're thirsty and find a water bottle. Instead of "pick up bottle, then drink," you pick up AND drink in one motion.</p>
+                    <div class="code-block">
+                        <span class="cmt"># Old way</span><br>
+                        n <span class="op">=</span> <span class="fn">len</span><span class="pun">(</span><span class="pun">[</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">,</span> <span class="num">4</span><span class="pun">,</span> <span class="num">5</span><span class="pun">])</span><br>
+                        <span class="kw">while</span> n <span class="op">></span> <span class="num">0</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span>n<span class="pun">)</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;n <span class="op">=</span> <span class="fn">len</span><span class="pun">(</span><span class="pun">[</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">,</span> <span class="num">4</span><span class="pun">,</span> <span class="num">5</span><span class="pun">])</span>  <span class="cmt"># Repeated!</span><br><br>
+                        <span class="cmt"># With Walrus Operator</span><br>
+                        numbers <span class="op">=</span> <span class="pun">[</span><span class="num">1</span><span class="pun">,</span> <span class="num">2</span><span class="pun">,</span> <span class="num">3</span><span class="pun">,</span> <span class="num">4</span><span class="pun">,</span> <span class="num">5</span><span class="pun">]</span><br>
+                        <span class="kw">while</span> <span class="pun">(</span>n <span class="op">:=</span> <span class="fn">len</span><span class="pun">(</span>numbers<span class="pun">))</span> <span class="op">></span> <span class="num">0</span><span class="pun">:</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="blt">print</span><span class="pun">(</span>numbers<span class="pun">.</span><span class="fn">pop</span><span class="pun">())</span><br>
+                        <span class="cmt"># n is assigned AND checked in one line!</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
