@@ -1,4 +1,15 @@
-<aside class="w-64 bg-[#111827] border-r border-gray-800 flex flex-col justify-between h-full hidden md:flex">
+<!-- Mobile Menu Overlay (hidden by default) -->
+<div id="mobile-overlay" class="fixed inset-0 bg-black/70 z-40 hidden md:hidden" onclick="closeMobileMenu()"></div>
+
+<!-- Mobile Menu Button -->
+<button id="mobile-menu-btn" class="fixed top-4 left-4 z-50 p-2 bg-[#111827] border border-gray-700 rounded-lg text-white md:hidden" onclick="toggleMobileMenu()">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+</button>
+
+<!-- Sidebar (Desktop: always visible, Mobile: slide-out) -->
+<aside id="sidebar" class="fixed md:relative w-64 bg-[#111827] border-r border-gray-800 flex flex-col justify-between h-full z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
     <div class="p-6">
         <div class="flex items-center space-x-2 text-xl font-bold text-white tracking-wide">
             <img src="assets/images/logo.png" alt="Logo" class="h-8 w-auto">
@@ -22,3 +33,19 @@
         </div>
     </div>
 </aside>
+
+<script>
+function toggleMobileMenu() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('mobile-overlay');
+    sidebar.classList.toggle('-translate-x-full');
+    overlay.classList.toggle('hidden');
+}
+
+function closeMobileMenu() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('mobile-overlay');
+    sidebar.classList.add('-translate-x-full');
+    overlay.classList.add('hidden');
+}
+</script>

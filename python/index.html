@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <base href="/circuit2code/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circuit2Code | Python Interview Hub</title>
@@ -34,24 +33,49 @@
         .code-block .blt { color: #C586C0; }
         .code-block .sel { color: #D7BA7D; }
         .code-block .pun { color: #D4D4D4; }
+
+        /* Mobile sidebar overlay */
+        #sidebar-overlay {
+            display: none;
+        }
+        #sidebar-overlay.active {
+            display: block;
+        }
+        
+        /* Mobile code block font size */
+        @media (max-width: 640px) {
+            .code-block {
+                font-size: 11px !important;
+                padding: 12px !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-[#0B0F19] text-gray-200 font-sans h-screen flex overflow-hidden">
 
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/60 z-40 lg:hidden" onclick="toggleSidebar()"></div>
+
     <!-- SIDEBAR -->
-    <aside class="w-64 bg-[#111827] border-r border-gray-800 flex flex-col justify-between h-full">
+    <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-64 bg-[#111827] border-r border-gray-800 flex flex-col justify-between h-full transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50">
         <div>
-        <div class="h-16 flex items-center px-6 border-b border-gray-800">
-            <div class="flex items-center space-x-2 text-xl font-bold text-white tracking-wide">
-                <img src="./assets/images/logo.png" alt="Logo" class="h-8 w-auto">
-                <span>Circuit2Code</span>
+            <div class="h-16 flex items-center justify-between px-4 lg:px-6 border-b border-gray-800">
+                <div class="flex items-center space-x-2 text-xl font-bold text-white tracking-wide">
+                    <img src="../assets/images/logo.png" alt="Logo" class="h-8 w-auto">
+                    <span>Circuit2Code</span>
+                </div>
+                <!-- Close button for mobile -->
+                <button onclick="toggleSidebar()" class="lg:hidden text-gray-400 hover:text-white p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
             </div>
-        </div>
             
             <nav class="p-4 space-y-6 overflow-y-auto">
                 <div>
                     <div class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2">Main Menu</div>
-                    <a href="./index.html" class="flex items-center space-x-3 px-3 py-2 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                    <a href="../index.html" class="flex items-center space-x-3 px-3 py-2 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition">
                         <span>📊</span> <span>Dashboard</span>
                     </a>
                 </div>
@@ -72,47 +96,54 @@
     </aside>
 
     <!-- MAIN CONTENT -->
-    <main class="flex-1 flex flex-col h-full relative">
+    <main class="flex-1 flex flex-col h-full relative w-full min-w-0">
         
         <!-- HEADER -->
-        <header class="h-16 border-b border-gray-800 bg-[#111827]/80 backdrop-blur flex items-center justify-between px-8 z-10">
-            <div class="text-lg font-semibold text-white flex items-center space-x-2">
-                <span class="text-gray-500">Workspace</span>
-                <span class="text-gray-600">/</span>
+        <header class="h-16 border-b border-gray-800 bg-[#111827]/80 backdrop-blur flex items-center justify-between px-4 lg:px-8 z-10">
+            <!-- Mobile hamburger menu -->
+            <button onclick="toggleSidebar()" class="lg:hidden text-gray-400 hover:text-white p-2 -ml-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <div class="text-base lg:text-lg font-semibold text-white flex items-center space-x-2 truncate">
+                <span class="text-gray-500 hidden sm:inline">Workspace</span>
+                <span class="text-gray-600 hidden sm:inline">/</span>
                 <span class="text-blue-400">Python Theory Hub</span>
             </div>
             
             <div class="flex items-center space-x-4">
-                <span class="text-sm text-gray-500 font-mono">54 ESSENTIAL QUESTIONS</span>
+                <span class="text-xs lg:text-sm text-gray-500 font-mono hidden sm:inline">54 ESSENTIAL QUESTIONS</span>
             </div>
         </header>
 
-        <div class="p-8 overflow-y-auto flex-1 w-full max-w-4xl mx-auto space-y-6 pb-20">
+        <div class="p-4 sm:p-6 lg:p-8 overflow-y-auto flex-1 w-full max-w-4xl mx-auto space-y-6 pb-20">
             
-            <div class="p-6 bg-gradient-to-r from-blue-950/40 to-purple-950/30 border border-blue-900/40 rounded-xl mb-8">
-                <h2 class="text-xl font-bold text-white mb-2">Crack the Core Screenings</h2>
-                <p class="text-gray-400 text-sm max-w-2xl">Here are the essential theoretical Python questions compiled directly to clear technical interview bottlenecks.</p>
+            <div class="p-4 sm:p-6 bg-gradient-to-r from-blue-950/40 to-purple-950/30 border border-blue-900/40 rounded-xl mb-8">
+                <h2 class="text-lg sm:text-xl font-bold text-white mb-2">Crack the Core Screenings</h2>
+                <p class="text-gray-400 text-xs sm:text-sm max-w-2xl">Here are the essential theoretical Python questions compiled directly to clear technical interview bottlenecks.</p>
             </div>
 
             <!-- Question 01 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 01</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Is Python compiled or interpreted?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Is Python compiled or interpreted?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Python is both — like a teacher who first writes notes on the board (compiles) and then reads them aloud to the class (interprets).</p>
                     <p><strong>Real-world example:</strong> Think of it like making Maggi noodles. First, you read the instructions (compile to bytecode), then you actually cook it step by step (interpret). Python first converts your code to bytecode (.pyc files), then the Python Virtual Machine reads and runs it line by line.</p>
                 </div>
             </div>
 
             <!-- Question 02 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 02</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">How to join (concatenate) two lists?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">How to join (concatenate) two lists?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> You can stick two lists together using <code>+</code> (makes a new list) or <code>extend()</code> (adds to existing list).</p>
                     <p><strong>Real-world example:</strong> Imagine two trains. Using <code>+</code> is like joining them to make a new longer train. Using <code>extend()</code> is like adding extra coaches to your existing train.</p>
                     <div class="code-block">
@@ -128,12 +159,12 @@
             </div>
 
             <!-- Question 03 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 03</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Difference between for and while loop?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Difference between for and while loop?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <strong>for</strong> loop: Use when you know exactly how many times to repeat (like "do this 5 times").<br>
                     <strong>while</strong> loop: Use when you don't know the count, but know when to stop (like "keep eating until you're full").</p>
@@ -156,12 +187,12 @@
             </div>
 
             <!-- Question 04 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 04</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">How to floor a number?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">How to floor a number?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> <code>math.floor()</code> rounds DOWN to the nearest whole number (like the floor of a building — you can only go down).</p>
                     <p><strong>Real-world example:</strong> If you have 3.7 pizzas, floor() says you have 3 complete pizzas. The 0.7 is just extra scraps.</p>
                     <div class="code-block">
@@ -173,12 +204,12 @@
             </div>
 
             <!-- Question 05 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 05</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Difference between / and //?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Difference between / and //?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <code>/</code> = Normal division (gives exact answer with decimals)<br>
                     <code>//</code> = Floor division (gives whole number only)</p>
@@ -193,12 +224,12 @@
             </div>
 
             <!-- Question 06 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 06</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Is indentation required in Python?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Is indentation required in Python?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> YES! In Python, indentation (spaces/tabs) is not just for looks — it shows what belongs together, like paragraphs in an essay.</p>
                     <p><strong>Real-world example:</strong> In English, paragraphs group related sentences. In Python, indentation groups related code. Without it, Python gets confused about what belongs inside the <code>if</code> or <code>for</code>.</p>
                     <div class="code-block">
@@ -210,12 +241,12 @@
             </div>
 
             <!-- Question 07 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 07</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Can we pass a function as an argument?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Can we pass a function as an argument?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Yes! Functions are like tools. You can ask someone to use a specific tool for a job.</p>
                     <p><strong>Real-world example:</strong> You tell your friend "use the addition method" to solve 3+5. Your friend doesn't need to know how addition works, just uses the tool you gave.</p>
                     <div class="code-block">
@@ -229,12 +260,12 @@
             </div>
 
             <!-- Question 08 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 08</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is a dynamically typed language?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is a dynamically typed language?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> You don't need to tell Python "this is a number" or "this is text." Python figures it out automatically when you run the code.</p>
                     <p><strong>Real-world example:</strong> Think of a magic box. You put in a book — it becomes a book box. You put in shoes — it becomes a shoe box. You don't need to label it beforehand.</p>
                     <div class="code-block">
@@ -245,12 +276,12 @@
             </div>
 
             <!-- Question 09 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 09</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is pass in Python?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is pass in Python?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> <code>pass</code> means "do nothing." It's like a placeholder or bookmark for later.</p>
                     <p><strong>Real-world example:</strong> You reserve a seat in a movie theater but haven't bought the ticket yet. The seat is saved, but nothing happens there right now.</p>
                     <div class="code-block">
@@ -262,12 +293,12 @@
             </div>
 
             <!-- Question 10 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 10</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">How are arguments passed in Python?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">How are arguments passed in Python?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Python uses "Pass by Object Reference." It's like sharing a notebook vs. giving a photocopy.</p>
                     <p><strong>Real-world example:</strong><br>
                     Mutable objects (lists, dictionaries) = Shared notebook. If your friend writes in it, you see the changes too.<br>
@@ -288,12 +319,12 @@
             </div>
 
             <!-- Question 11 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 11</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is a lambda function?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is a lambda function?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> A one-line shortcut function with no name. Like a quick calculator.</p>
                     <p><strong>Real-world example:</strong> Instead of writing a full recipe for "add sugar," you just say "add 2 spoons of sugar" directly.</p>
                     <div class="code-block">
@@ -311,12 +342,12 @@
             </div>
 
             <!-- Question 12 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 12</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is List Comprehension?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is List Comprehension?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> A shortcut to create lists in one line instead of writing a full loop.</p>
                     <p><strong>Real-world example:</strong> Instead of writing "take each apple, paint it red, put in basket" as 3 steps, you just say "red apples in basket."</p>
                     <div class="code-block">
@@ -332,12 +363,12 @@
             </div>
 
             <!-- Question 13 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 13</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What are *args and **kwargs?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What are *args and **kwargs?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> They let you accept any number of inputs.<br>
                     <strong>*args</strong> = Any number of values (like a backpack)<br>
                     <strong>**kwargs</strong> = Any number of named values (like labeled folders)</p>
@@ -359,12 +390,12 @@
             </div>
 
             <!-- Question 14 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 14</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">break, continue, and pass?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">break, continue, and pass?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <strong>break:</strong> Stop everything and exit the loop (like a red light — stop completely).<br>
                     <strong>continue:</strong> Skip this round, go to next (like a yellow light — skip, continue).<br>
@@ -386,12 +417,12 @@
             </div>
 
             <!-- Question 15 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 15</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Difference between Set and Dictionary?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Difference between Set and Dictionary?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <strong>Set:</strong> A bag of unique items, no duplicates, no order.<br>
                     <strong>Dictionary:</strong> A locker with labeled keys, each key opens a specific value.</p>
@@ -407,12 +438,12 @@
             </div>
 
             <!-- Question 16 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 16</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Built-in Data Types in Python?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Built-in Data Types in Python?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> The basic types of "boxes" Python provides:<br>
                     <strong>Numbers:</strong> int, float, complex (like 5, 5.5, 3+4j)<br>
                     <strong>Sequence:</strong> str, list, tuple, range (ordered collections)<br>
@@ -429,12 +460,12 @@
             </div>
 
             <!-- Question 17 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 17</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Mutable vs Immutable?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Mutable vs Immutable?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <strong>Mutable:</strong> Can be changed after creation (like a whiteboard).<br>
                     <strong>Immutable:</strong> Cannot be changed after creation (like a permanent marker on stone).</p>
@@ -454,12 +485,12 @@
             </div>
 
             <!-- Question 18 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 18</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is Variable Scope?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is Variable Scope?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Where a variable can be seen and used.</p>
                     <p><strong>Real-world example:</strong><br>
                     <strong>Local:</strong> Your diary at home — only you can read it.<br>
@@ -478,12 +509,12 @@
             </div>
 
             <!-- Question 19 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 19</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">How is Dictionary different from List?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">How is Dictionary different from List?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <strong>List:</strong> Items in order, accessed by position number (0, 1, 2...).<br>
                     <strong>Dictionary:</strong> Items with labels, accessed by name/key.</p>
@@ -498,12 +529,12 @@
             </div>
 
             <!-- Question 20 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 20</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is a Docstring?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is a Docstring?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> A comment written inside <code>"""</code> that explains what a function/class does. Like an instruction manual.</p>
                     <p><strong>Real-world example:</strong> The user manual that comes with a new phone. It tells you what the phone does without you needing to open it up.</p>
                     <div class="code-block">
@@ -517,12 +548,12 @@
             </div>
 
             <!-- Question 21 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 21</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Exception Handling in Python?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Exception Handling in Python?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> A way to handle mistakes gracefully without crashing the program.</p>
                     <p><strong>Real-world example:</strong> You're crossing a road. <strong>try</strong> = look both ways. <strong>except</strong> = if a car comes, step back. <strong>finally</strong> = whether you cross or not, you still reach your destination.</p>
                     <div class="code-block">
@@ -537,12 +568,12 @@
             </div>
 
             <!-- Question 22 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 22</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Arrays vs Lists?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Arrays vs Lists?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <strong>Array:</strong> Only stores same type of data (all numbers), faster for math.<br>
                     <strong>List:</strong> Can store anything (numbers, text, objects), more flexible.</p>
@@ -558,12 +589,12 @@
             </div>
 
             <!-- Question 23 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 23</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Modules and Packages?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Modules and Packages?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <strong>Module:</strong> A single file with useful code (like one chapter of a book).<br>
                     <strong>Package:</strong> A folder containing multiple related modules (like a full book).</p>
@@ -580,12 +611,12 @@
             </div>
 
             <!-- Question 24 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 24</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">range() vs xrange()?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">range() vs xrange()?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> In Python 3, <code>range()</code> works like old <code>xrange()</code> — it generates numbers one by one when needed, not all at once. <code>xrange</code> doesn't exist in Python 3.</p>
                     <p><strong>Real-world example:</strong> Like a vending machine that gives one snack at a time instead of dumping everything on the floor at once. Saves memory!</p>
                     <div class="code-block">
@@ -597,12 +628,12 @@
             </div>
 
             <!-- Question 25 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 25</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Dictionary Comprehension?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Dictionary Comprehension?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> A shortcut to create dictionaries in one line.</p>
                     <p><strong>Real-world example:</strong> Instead of writing names and roll numbers one by one in a register, you use a machine that pairs them instantly.</p>
                     <div class="code-block">
@@ -616,12 +647,12 @@
             </div>
 
             <!-- Question 26 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 26</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Is Tuple Comprehension possible?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Is Tuple Comprehension possible?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> No direct tuple comprehension. Using <code>()</code> creates a generator (lazy producer), not a tuple. Use <code>tuple()</code> to convert.</p>
                     <p><strong>Real-world example:</strong> <code>(x for x in range(5))</code> is like a recipe — it tells you how to make items but doesn't make them until you ask. To get an actual box of items, use <code>tuple()</code>.</p>
                     <div class="code-block">
@@ -635,12 +666,12 @@
             </div>
 
             <!-- Question 27 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 27</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">List vs Tuple?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">List vs Tuple?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <strong>List:</strong> Changeable, uses <code>[]</code>, slower.<br>
                     <strong>Tuple:</strong> Unchangeable, uses <code>()</code>, faster.</p>
@@ -656,13 +687,13 @@
                 </div>
             </div>
 
-            <!-- Question 28 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                        <!-- Question 28 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 28</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Shallow Copy vs Deep Copy?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Shallow Copy vs Deep Copy?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <strong>Shallow Copy:</strong> Copies the outer box, but inner items are still shared.<br>
                     <strong>Deep Copy:</strong> Copies everything — outer box and all inner items completely new.</p>
@@ -685,24 +716,24 @@
             </div>
 
             <!-- Question 29 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 29</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Which sorting does Python use?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Which sorting does Python use?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Timsort — a smart mix of Merge Sort and Insertion Sort. Fast and stable.</p>
                     <p><strong>Real-world example:</strong> Like sorting a deck of cards where some parts are already sorted. Instead of mixing everything up, you use the already-sorted parts to speed up.</p>
                 </div>
             </div>
 
             <!-- Question 30 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 30</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What are Decorators?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What are Decorators?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> A function that wraps another function to add extra features without changing the original.</p>
                     <p><strong>Real-world example:</strong> You have a plain gift. A decorator is like gift wrapping — it adds ribbons and paper (extra features) but the gift inside remains the same.</p>
                     <div class="code-block">
@@ -722,12 +753,12 @@
             </div>
 
             <!-- Question 31 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 31</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">How to debug a Python program?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">How to debug a Python program?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Finding and fixing errors.</p>
                     <p><strong>Real-world example:</strong> Like being a detective solving a mystery.<br>
                     <strong>pdb:</strong> Stop the movie at a scene and check what's happening.<br>
@@ -742,12 +773,12 @@
             </div>
 
             <!-- Question 32 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 32</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What are Iterators?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What are Iterators?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Objects that give you one item at a time when you ask.</p>
                     <p><strong>Real-world example:</strong> A TV remote's "Next Channel" button. Press it once → get one channel. Press again → next channel. You don't get all channels at once.</p>
                     <div class="code-block">
@@ -760,12 +791,12 @@
             </div>
 
             <!-- Question 33 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 33</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What are Generators?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What are Generators?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Functions that produce values one by one using <code>yield</code>, saving memory.</p>
                     <p><strong>Real-world example:</strong> A vending machine that gives one snack at a time vs. a truck dumping 1000 snacks on your lawn. Generators are the vending machine.</p>
                     <div class="code-block">
@@ -782,12 +813,12 @@
             </div>
 
             <!-- Question 34 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 34</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Does Python support Multiple Inheritance?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Does Python support Multiple Inheritance?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Yes! A child can inherit from multiple parents.</p>
                     <p><strong>Real-world example:</strong> You inherit traits from both your mother (eyes) and father (height). Similarly, a class can inherit from multiple classes.</p>
                     <div class="code-block">
@@ -807,12 +838,12 @@
             </div>
 
             <!-- Question 35 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 35</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is Polymorphism?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is Polymorphism?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Same name, different behavior. One action, different results based on who does it.</p>
                     <p><strong>Real-world example:</strong> The word "Play" — you play cricket, play guitar, play video games. Same word, different actions!</p>
                     <div class="code-block">
@@ -829,12 +860,12 @@
             </div>
 
             <!-- Question 36 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 36</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is Encapsulation?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is Encapsulation?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Hiding internal details and only exposing what's needed.</p>
                     <p><strong>Real-world example:</strong> A TV remote. You press "Volume Up" — you don't need to know how the circuits inside work. The internal stuff is hidden (private), only buttons are exposed (public).</p>
                     <div class="code-block">
@@ -856,12 +887,12 @@
             </div>
 
             <!-- Question 37 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 37</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is Data Abstraction?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is Data Abstraction?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Showing only essential features, hiding complex details.</p>
                     <p><strong>Real-world example:</strong> Driving a car. You use steering, brake, accelerator. You don't need to understand the engine, transmission, or fuel injection system.</p>
                     <div class="code-block">
@@ -880,12 +911,12 @@
             </div>
 
             <!-- Question 38 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 38</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">How is memory managed in Python?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">How is memory managed in Python?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Python automatically handles memory using:<br>
                     <strong>Private heap:</strong> A special storage area for all objects.<br>
                     <strong>Garbage collector:</strong> Automatically cleans up unused objects (like a robot vacuum).</p>
@@ -894,12 +925,12 @@
             </div>
 
             <!-- Question 39 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 39</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">How to delete a file?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">How to delete a file?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Use <code>os.remove()</code> for permanent delete, or <code>send2trash</code> for recycle bin.</p>
                     <p><strong>Real-world example:</strong><br>
                     <strong>os.remove():</strong> Throwing paper directly into fire (gone forever).<br>
@@ -912,12 +943,12 @@
             </div>
 
             <!-- Question 40 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 40</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is Slicing?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is Slicing?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Cutting out a portion of a list/string/tuple.</p>
                     <p><strong>Real-world example:</strong> Cutting a slice of cake from a whole cake. You specify where to start, where to end, and how big the pieces should be.</p>
                     <div class="code-block">
@@ -929,13 +960,13 @@
                 </div>
             </div>
 
-            <!-- Question 41 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+                        <!-- Question 41 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 41</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is a Namespace?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is a Namespace?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> A container where names (variables, functions) live. It prevents confusion between same names in different places.</p>
                     <p><strong>Real-world example:</strong> Two students named "Rahul" — one in Class 10A, one in 10B. The classroom is the namespace. 10A.Rahul and 10B.Rahul are different people!</p>
                     <div class="code-block">
@@ -953,12 +984,12 @@
             </div>
 
             <!-- Question 42 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 42</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is PIP?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is PIP?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> PIP = Pip Installs Packages. It's Python's App Store for downloading libraries.</p>
                     <p><strong>Real-world example:</strong> Like Google Play Store or Apple App Store. You want a calculator app? Download it. You want numpy for math? <code>pip install numpy</code>.</p>
                     <div class="code-block">
@@ -969,12 +1000,12 @@
             </div>
 
             <!-- Question 43 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 43</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is zip() function?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is zip() function?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Joins two or more lists together pair by pair, like a zipper.</p>
                     <p><strong>Real-world example:</strong> A zipper on a jacket joins left and right sides tooth by tooth. <code>zip()</code> joins list items index by index.</p>
                     <div class="code-block">
@@ -987,12 +1018,12 @@
             </div>
 
             <!-- Question 44 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 44</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Pickling and Unpickling?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Pickling and Unpickling?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <strong>Pickling:</strong> Converting Python objects to bytes (for saving/sharing).<br>
                     <strong>Unpickling:</strong> Converting bytes back to Python objects.</p>
@@ -1013,12 +1044,12 @@
             </div>
 
             <!-- Question 45 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 45</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">@classmethod, @staticmethod, and Instance Methods?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">@classmethod, @staticmethod, and Instance Methods?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <strong>Instance method:</strong> Needs an object (uses <code>self</code>). Like your personal diary.<br>
                     <strong>Class method:</strong> Works for the whole class (uses <code>cls</code>). Like a school notice.<br>
@@ -1053,12 +1084,12 @@
             </div>
 
             <!-- Question 46 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 46</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is __init__() and self?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is __init__() and self?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong><br>
                     <strong>__init__():</strong> The "setup" function that runs automatically when you create an object.<br>
                     <strong>self:</strong> Refers to the object itself (like saying "me" or "myself").</p>
@@ -1078,12 +1109,12 @@
             </div>
 
             <!-- Question 47 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 47</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Display current time?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Display current time?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Use <code>datetime</code> module.</p>
                     <div class="code-block">
                         <span class="kw">from</span> datetime <span class="kw">import</span> datetime<br>
@@ -1093,12 +1124,12 @@
             </div>
 
             <!-- Question 48 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 48</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Access Specifiers in Python?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Access Specifiers in Python?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Controls who can access what.<br>
                     <strong>Public:</strong> No underscore. Anyone can access. Like a public park.<br>
                     <strong>Protected:</strong> Single underscore <code>_</code>. Like school property — students can use, but outsiders shouldn't.<br>
@@ -1118,12 +1149,12 @@
             </div>
 
             <!-- Question 49 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 49</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What are Unit Tests?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What are Unit Tests?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Testing small individual parts of code to make sure each works correctly.</p>
                     <p><strong>Real-world example:</strong> Before a final exam, you test yourself on each chapter. If every chapter is perfect, the whole exam will be good. You don't wait until the final to check!</p>
                     <div class="code-block">
@@ -1139,24 +1170,24 @@
             </div>
 
             <!-- Question 50 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 50</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">What is GIL (Global Interpreter Lock)?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">What is GIL (Global Interpreter Lock)?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> A rule that allows only one thread to run Python code at a time.</p>
                     <p><strong>Real-world example:</strong> A single-lane bridge. Only one car can cross at a time. Even if 10 cars arrive, they must wait their turn. This keeps things safe but can slow down heavy calculations.</p>
                 </div>
             </div>
 
             <!-- Question 51 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 51</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Function Annotations?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Function Annotations?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Adding labels to tell what type of data a function expects and returns.</p>
                     <p><strong>Real-world example:</strong> Like labeling boxes when moving house — "Fragile: Glass", "Heavy: Books". It doesn't force anything, but helps everyone understand.</p>
                     <div class="code-block">
@@ -1169,12 +1200,12 @@
             </div>
 
             <!-- Question 52 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 52</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Exception Groups (Python 3.11+)?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Exception Groups (Python 3.11+)?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Handling multiple errors at once instead of one by one.</p>
                     <p><strong>Real-world example:</strong> A teacher checking homework. Instead of stopping at the first mistake, they collect ALL mistakes and tell you everything at once.</p>
                     <div class="code-block">
@@ -1192,12 +1223,12 @@
             </div>
 
             <!-- Question 53 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 53</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Python Switch Statement?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Python Switch Statement?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Python doesn't have traditional switch, but Python 3.10+ has match-case.</p>
                     <p><strong>Real-world example:</strong> Like a key matching a lock. You try different keys until one fits.</p>
                     <div class="code-block">
@@ -1214,13 +1245,13 @@
                 </div>
             </div>
 
-            <!-- Questrdion 54 -->
-            <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 shadow-xl hover:border-gray-700 transition">
+            <!-- Question 54 -->
+            <div class="bg-[#111827] border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl hover:border-gray-700 transition">
                 <div class="flex items-start justify-between">
                     <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 rounded text-xs font-semibold tracking-wide uppercase">Question 54</span>
                 </div>
-                <h3 class="text-lg font-medium text-white mt-3">Walrus Operator (:=)?</h3>
-                <div class="mt-4 text-sm text-gray-400 space-y-3 leading-relaxed">
+                <h3 class="text-base sm:text-lg font-medium text-white mt-3">Walrus Operator (:=)?</h3>
+                <div class="mt-4 text-xs sm:text-sm text-gray-400 space-y-3 leading-relaxed">
                     <p><strong>Simple Answer:</strong> Assign a value while using it in an expression. Do two things at once!</p>
                     <p><strong>Real-world example:</strong> You're thirsty and find a water bottle. Instead of "pick up bottle, then drink," you pick up AND drink in one motion.</p>
                     <div class="code-block">
@@ -1241,5 +1272,14 @@
         </div>
     </main>
 
+    <script>
+        // Mobile sidebar toggle
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
